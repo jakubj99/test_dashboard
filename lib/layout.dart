@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:test_dashboard/helpers/responsivness.dart';
+import 'package:test_dashboard/widgets/large_screen.dart';
+import 'package:test_dashboard/widgets/small_screen.dart';
 
 class SiteLayout extends StatelessWidget {
-  const SiteLayout({ Key? key}) : super(key: key);
+  const SiteLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,19 +14,10 @@ class SiteLayout extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: Row(
-        children: [
-          Expanded(
-              child: Container(
-            color: Colors.red,
-          )),
-          Expanded(
-              flex: 5,
-              child: Container(
-                color: Colors.blue,
-              ))
-        ],
-      ),
+      body: ResponsiveWidget(
+          largeScreen: LargeScreen(),
+          mediumScreen: LargeScreen(),
+          smallScreen: SmallScreen()),
     );
   }
 }
