@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:test_dashboard/helpers/responsivness.dart';
 import 'package:test_dashboard/widgets/large_screen.dart';
 import 'package:test_dashboard/widgets/small_screen.dart';
+import 'package:test_dashboard/widgets/top_nav.dart';
 
 class SiteLayout extends StatelessWidget {
-  const SiteLayout({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
+      key: scaffoldKey,
+      appBar: topNavigationBar(context, scaffoldKey),
+      drawer: Drawer(),
       body: ResponsiveWidget(
           largeScreen: LargeScreen(),
           mediumScreen: LargeScreen(),
