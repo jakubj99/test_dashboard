@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:test_dashboard/controllers/menu_controller.dart';
 import 'package:test_dashboard/layout.dart';
 void main() {
+  Get.put(MenuController());
   runApp(MyApp());
 }
 
